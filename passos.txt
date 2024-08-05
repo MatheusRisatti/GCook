@@ -1,0 +1,6 @@
+git config --global user.name "MatheusRisatti"
+git config --global user.email "risattimatheus@gmail.com"
+
+dotnet new mvc -o GCook
+
+cd GCook
