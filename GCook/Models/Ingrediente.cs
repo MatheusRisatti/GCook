@@ -3,14 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GCook.Models;
 
-    [Table("Ingrediente")]
-    public class Ingrediente
-    {
-        [Key]
-        public int Id { get; set; }
+[Table("Ingrediente")]
+public class Ingrediente
+{
+    [Key]
+    public int Id { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string Nome { get; set; }
-        
-    }
+    [Required]
+    [StringLength(50)]
+    public string Nome { get; set; }
+}

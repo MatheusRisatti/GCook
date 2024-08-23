@@ -3,26 +3,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GCook.Models;
 
-    [Table("Comentario")]
-    public class Comentario
-    {
-        [Key]
-        public int Id { get; set; }
+[Table("Comentario")]
+public class Comentario
+{
+    [Key]
+    public int Id { get; set; }
 
-        [Required]
-        public int ReceitaId { get; set; }
-        [ForeignKey("ReceitaId")]
+    [Required]
+    public int ReceitaId { get; set; }
+    [ForeignKey("ReceitaId")]
+    public Receita Receita { get; set; }
 
-        public string Receita { get; set; }
+    [Required]
+    public string UsuarioId { get; set; }
+    [ForeignKey("UsuarioId")]
+    public Usuario Usuario { get; set; }
 
-        [Required]
-        public string UsuarioId { get; set; }
-        [ForeignKey("UsuarioId")]
+    public DateTime DataComentario { get; set; } = DateTime.Now;
 
-        public Usuario Usuario { get; set; }
+    [StringLength(300)]
+    public string TextoComentario { get; set; }
 
-        public DateTime DataComentario { get; set; }
-
-        [StringLength(300)]
-        public string TextoComentario { get; set; }
-    }
+}
